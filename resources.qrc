@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>speedometer/maps/kmh.png</file>
+        <file>speedometer/maps/mph.png</file>
+        <file>speedometer/maps/spedoometer_arrow.png</file>
+        <file>speedometer/maps/spedoometer_bg.png</file>
+        <file>speedometer/speedometer.uia</file>
+        <file>speedometer/presentations/speedometer.uip</file>
+        <file>speedometer/fonts/TitilliumWeb-Regular.ttf</file>
+    </qresource>
+</RCC>

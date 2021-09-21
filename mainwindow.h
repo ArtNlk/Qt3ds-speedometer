@@ -1,21 +1,24 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
+#include <QWindow>
+#include <QtStudio3D/Q3DSPresentation>
+#include <QKeyEvent>
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
-QT_END_NAMESPACE
-
-class MainWindow : public QMainWindow
+class MainWindow : public QWindow
 {
-    Q_OBJECT
-
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    MainWindow(QWindow* parent = nullptr);
+
+    void setPresentation(Q3DSPresentation* _presentation);
+
+public slots:
+    void onPresentationReady();
 
 private:
-    Ui::MainWindow *ui;
+    void keyPressEvent(QKeyEvent *event);
+
+    Q3DSPresentation* presentation;
 };
+
 #endif // MAINWINDOW_H

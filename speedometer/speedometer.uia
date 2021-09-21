@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<application xmlns="http://qt.io/qt3dstudio/uia">
+    <assets initial="speedometer">
+        <presentation id="speedometer" src="presentations/speedometer.uip"/>
+        <dataInput metadata="" name="CurrentSlide" type="String"/>
+    </assets>
+</application>

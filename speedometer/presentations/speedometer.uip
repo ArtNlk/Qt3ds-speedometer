@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<UIP version="7" >
+	<Project >
+		<ProjectSettings author="" company="" presentationWidth="1000" presentationHeight="500" maintainAspect="False" preferKtx="False" flipCompressedTextures="False" >
+			<CustomColors count="16" >#21202f #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff</CustomColors>
+		</ProjectSettings>
+		<BufferData >
+			<ImageBuffer sourcepath="../maps/spedoometer_bg.png" hasTransparency="True" hasOpaquePixels="True" />
+		</BufferData>
+		<Graph >
+			<Scene id="Scene_u48776" controlledproperty="$CurrentSlide @slide" >
+				<Layer id="Layer_u18507" variants="" >
+					<Group id="Speedometer_u17540" variants="" >
+						<Model id="spedoometer_bg_u30879" variants="" >
+							<ReferencedMaterial id="spedoometer_bg_u36143" />
+						</Model>
+					</Group>
+					<Camera id="Camera_u27763" />
+				</Layer>
+				<Material id="__Container_u63543" >
+					<Material id="materials/spedoometer_bg_u49930" importfile="../maps/spedoometer_bg.png" >
+						<Image id="materials/spedoometer_bg_u49930_diffusemap_u29808" />
+					</Material>
+				</Material>
+			</Scene>
+		</Graph>
+		<Logic >
+			<State name="Master Slide" component="#Scene_u48776" >
+				<Add ref="#Layer_u18507" />
+				<Add ref="#Speedometer_u17540" name="Speedometer" position="-20 0 0" />
+				<Add ref="#spedoometer_bg_u30879" name="spedoometer_bg" scale="5 4.63 1" sourcepath="#Rectangle" />
+				<Add ref="#spedoometer_bg_u36143" name="spedoometer_bg" referencedmaterial="#materials/spedoometer_bg_u49930" sourcepath="../materials/spedoometer_bg.materialdef" />
+				<Add ref="#Camera_u27763" orthographic="True" />
+				<Add ref="#__Container_u63543" name="__Container" />
+				<Add ref="#materials/spedoometer_bg_u49930" name="materials/spedoometer_bg" diffuse="1 0 0.0156863 1" diffusemap="#materials/spedoometer_bg_u49930_diffusemap_u29808" importid="" shaderlighting="None" />
+				<Add ref="#materials/spedoometer_bg_u49930_diffusemap_u29808" name="diffusemap" importid="" sourcepath="../maps/spedoometer_bg.png" subpresentation="" />
+				<State id="Scene-Slide1_u44821" name="Slide1" initialplaystate="Play" playmode="Stop at end" playthroughto="Next" >
+					<Set ref="#Speedometer_u17540" position="222 0 0" />
+				</State>
+				<State id="Scene-Slide2_u53874" name="Slide2" initialplaystate="Pause" playmode="Stop at end" playthroughto="Previous" >
+					<Set ref="#Speedometer_u17540" position="-232 0 0" />
+				</State>
+			</State>
+		</Logic>
+	</Project>
+</UIP>
