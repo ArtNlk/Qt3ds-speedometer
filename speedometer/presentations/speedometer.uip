@@ -5,106 +5,136 @@
 			<CustomColors count="16" >#21202f #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff #ffffff</CustomColors>
 		</ProjectSettings>
 		<BufferData >
-			<ImageBuffer sourcepath="../maps/kmh.png" hasTransparency="True" hasOpaquePixels="True" />
 			<ImageBuffer sourcepath="../maps/mph.png" hasTransparency="True" hasOpaquePixels="True" />
 			<ImageBuffer sourcepath="../maps/spedoometer_arrow.png" hasTransparency="True" hasOpaquePixels="True" />
 			<ImageBuffer sourcepath="../maps/spedoometer_bg.png" hasTransparency="True" hasOpaquePixels="True" />
 		</BufferData>
 		<Graph >
-			<Scene id="Scene_u939" controlledproperty="$CurrentSlide @slide" >
-				<Layer id="Layer_u18603" variants="" >
-					<Group id="Speedometer_u59660" variants="" >
-						<Model id="units_u46759" variants="" >
-							<ReferencedMaterial id="units_u33437" />
+			<Scene id="Scene_u51008" controlledproperty="$CurrentSlide @slide" >
+				<Layer id="Layer_u38394" variants="" >
+					<Group id="Speedometer_u26325" variants="" >
+						<Text id="Text_u960" variants="" />
+						<Component id="spedoometer_arrow_u33974" variants="" >
+							<Group id="Group_u12002" variants="" >
+								<Model id="spedoometer_arrow_u22600" variants="" >
+									<ReferencedMaterial id="spedoometer_arrow_001_u22647" />
+								</Model>
+							</Group>
+						</Component>
+						<Model id="units_u39096" variants="" >
+							<Material id="units_mat_u60060" >
+								<Image id="units_mat_u60060_diffusemap_u9045" />
+							</Material>
 						</Model>
-						<Model id="spedoometer_arrow_u32215" variants="" >
-							<ReferencedMaterial id="spedoometer_arrow_u56291" />
-						</Model>
-						<Model id="spedoometer_bg_u8397" variants="" >
-							<ReferencedMaterial id="spedoometer_bg_u4343" />
+						<Model id="spedoometer_bg_u23772" variants="" >
+							<ReferencedMaterial id="spedoometer_bg_mat_u29804" />
 						</Model>
 					</Group>
-					<Camera id="Camera_u41005" />
+					<Camera id="Camera_u38023" />
 				</Layer>
-				<Material id="__Container_u700" >
-					<Material id="materials/spedoometer_bg_u5894" importfile="../maps/spedoometer_bg.png" >
-						<Image id="materials/spedoometer_bg_u5894_diffusemap_u30156" />
+				<Material id="__Container_u58322" >
+					<Material id="materials/spedoometer_bg_mat_u21842" importfile="../maps/spedoometer_bg.png" >
+						<Image id="materials/spedoometer_bg_mat_u21842_diffusemap_u28541" />
 					</Material>
-					<Material id="materials/spedoometer_arrow_u43830" importfile="../maps/spedoometer_arrow.png" >
-						<Image id="materials/spedoometer_arrow_u43830_diffusemap_u36103" />
-					</Material>
-					<Material id="materials/units_u21860" importfile="../maps/kmh.png" >
-						<Image id="materials/units_u21860_diffusemap_u7799" />
+					<Material id="materials/spedoometer_arrow_u48545" importfile="../maps/spedoometer_arrow.png" >
+						<Image id="materials/spedoometer_arrow_u48545_diffusemap_u2454" />
 					</Material>
 				</Material>
 			</Scene>
 		</Graph>
 		<Logic >
-			<State name="Master Slide" component="#Scene_u939" initialplaystate="Play" playmode="Ping" >
-				<Add ref="#Layer_u18603" endtime="2000" />
-				<Add ref="#Speedometer_u59660" name="Speedometer" controlledproperty="" endtime="2000" opacity="100" position="-20 0 0" rotation="0 0 0" />
-				<Add ref="#units_u46759" name="units" endtime="2000" position="0 -103 0" scale="1.41 1.24 1" sourcepath="#Rectangle" />
-				<Add ref="#units_u33437" name="units" endtime="2000" referencedmaterial="#materials/units_u21860" sourcepath="../materials/units.materialdef" />
-				<Add ref="#spedoometer_arrow_u32215" name="spedoometer_arrow" controlledproperty="" endtime="2000" position="0 0 0" rotation="0 0 -60" scale="5 4.63 1" sourcepath="#Rectangle" >
-					<AnimationTrack property="rotation.x" type="EaseInOut" dynamic="True" >0 0 0 0 1.966 0 0 0</AnimationTrack>
-					<AnimationTrack property="rotation.y" type="EaseInOut" dynamic="True" >0 0 0 0 1.966 0 0 0</AnimationTrack>
-					<AnimationTrack property="rotation.z" type="EaseInOut" dynamic="True" >0 190 0 0 1.966 -60 0 0</AnimationTrack>
-				</Add>
-				<Add ref="#spedoometer_arrow_u56291" name="spedoometer_arrow" endtime="2000" referencedmaterial="#materials/spedoometer_arrow_u43830" sourcepath="../materials/spedoometer_arrow.materialdef" />
-				<Add ref="#spedoometer_bg_u8397" name="spedoometer_bg" endtime="2000" scale="5 4.63 1" sourcepath="#Rectangle" />
-				<Add ref="#spedoometer_bg_u4343" name="spedoometer_bg" endtime="2000" referencedmaterial="#materials/spedoometer_bg_u5894" sourcepath="../materials/spedoometer_bg.materialdef" />
-				<Add ref="#Camera_u41005" endtime="2000" orthographic="True" />
-				<Add ref="#__Container_u700" name="__Container" />
-				<Add ref="#materials/spedoometer_bg_u5894" name="materials/spedoometer_bg" controlledproperty="$SpeedometerColor diffuse" diffuse="1 0 0.0156863 1" diffusemap="#materials/spedoometer_bg_u5894_diffusemap_u30156" importid="" shaderlighting="None" />
-				<Add ref="#materials/spedoometer_bg_u5894_diffusemap_u30156" name="diffusemap" importid="" sourcepath="../maps/spedoometer_bg.png" subpresentation="" />
-				<Add ref="#materials/spedoometer_arrow_u43830" name="materials/spedoometer_arrow" controlledproperty="$SpeedometerColor diffuse" diffuse="1 0 0.0156863 1" diffusemap="#materials/spedoometer_arrow_u43830_diffusemap_u36103" importid="" shaderlighting="None" />
-				<Add ref="#materials/spedoometer_arrow_u43830_diffusemap_u36103" name="diffusemap" importid="" sourcepath="../maps/spedoometer_arrow.png" subpresentation="" />
-				<Add ref="#materials/units_u21860" name="materials/units" diffusemap="#materials/units_u21860_diffusemap_u7799" importid="" shaderlighting="None" />
-				<Add ref="#materials/units_u21860_diffusemap_u7799" name="diffusemap" importid="" sourcepath="../maps/kmh.png" subpresentation="" />
-				<State id="Scene-Left_u11584" name="Left" initialplaystate="Pause" playmode="Stop at end" playthroughto="Next" >
-					<Set ref="#Layer_u18603" endtime="2016" />
-					<Set ref="#Speedometer_u59660" endtime="2016" position="-20 0 0" >
+			<State name="Master Slide" component="#Scene_u51008" initialplaystate="Play" playmode="Ping" >
+				<Add ref="#Layer_u38394" endtime="2000" />
+				<Add ref="#Speedometer_u26325" name="Speedometer" controlledproperty="$SpeedometerVisible eyeball" endtime="2000" opacity="100" position="-20 0 0" rotation="0 0 0" />
+				<Add ref="#Text_u960" name="Text" controlledproperty="$SpeedometerText textstring $TextColor textcolor" endtime="2000" font="TitilliumWeb-Regular" position="-0.99999 -139 0" textstring="000" wordwrap="Clip" />
+				<Add ref="#spedoometer_arrow_u33974" name="spedoometer_arrow" controlledproperty="$CurrentArrowSlide @slide" endtime="2000" rotation="0 0 0" />
+				<Add ref="#units_u39096" name="units" endtime="2000" position="0 -103 0" scale="1.41 1.24 1" sourcepath="#Rectangle" />
+				<Add ref="#units_mat_u60060" name="units_mat" diffusemap="#units_mat_u60060_diffusemap_u9045" shaderlighting="None" />
+				<Add ref="#units_mat_u60060_diffusemap_u9045" name="diffusemap" sourcepath="../maps/mph.png" subpresentation="" />
+				<Add ref="#spedoometer_bg_u23772" name="spedoometer_bg" endtime="2000" scale="5 4.63 1" sourcepath="#Rectangle" />
+				<Add ref="#spedoometer_bg_mat_u29804" name="spedoometer_bg_mat" endtime="2000" referencedmaterial="#materials/spedoometer_bg_mat_u21842" sourcepath="../materials/spedoometer_bg_mat.materialdef" />
+				<Add ref="#Camera_u38023" endtime="2000" orthographic="True" />
+				<Add ref="#__Container_u58322" name="__Container" />
+				<Add ref="#materials/spedoometer_bg_mat_u21842" name="materials/spedoometer_bg_mat" controlledproperty="$SpeedometerColor diffuse" diffuse="1 0 0.0156863 1" diffusemap="#materials/spedoometer_bg_mat_u21842_diffusemap_u28541" importid="" shaderlighting="None" />
+				<Add ref="#materials/spedoometer_bg_mat_u21842_diffusemap_u28541" name="diffusemap" importid="" sourcepath="../maps/spedoometer_bg.png" subpresentation="" />
+				<Add ref="#materials/spedoometer_arrow_u48545" name="materials/spedoometer_arrow_mat" controlledproperty="$SpeedometerColor diffuse" diffuse="1 0 0.0156863 1" diffusemap="#materials/spedoometer_arrow_u48545_diffusemap_u2454" importid="" shaderlighting="None" />
+				<Add ref="#materials/spedoometer_arrow_u48545_diffusemap_u2454" name="diffusemap" importid="" sourcepath="../maps/spedoometer_arrow.png" subpresentation="" />
+				<State id="Scene-Left_u3249" name="Left" initialplaystate="Play" playmode="Stop at end" playthroughto="Next" >
+					<Set ref="#Layer_u38394" endtime="2016" />
+					<Set ref="#Speedometer_u26325" endtime="2016" position="-20 0 0" >
 						<AnimationTrack property="position.x" type="EaseInOut" dynamic="True" >0 -20 100 100 2 -249 100 100</AnimationTrack>
 						<AnimationTrack property="position.y" type="EaseInOut" dynamic="True" >0 0 100 100 2 0 100 100</AnimationTrack>
 						<AnimationTrack property="position.z" type="EaseInOut" dynamic="True" >0 0 100 100 2 0 100 100</AnimationTrack>
 					</Set>
-					<Set ref="#units_u46759" endtime="2016" />
-					<Set ref="#units_u33437" endtime="2016" />
-					<Set ref="#spedoometer_arrow_u32215" endtime="2016" />
-					<Set ref="#spedoometer_arrow_u56291" endtime="2016" />
-					<Set ref="#spedoometer_bg_u8397" endtime="2016" />
-					<Set ref="#spedoometer_bg_u4343" endtime="2016" />
-					<Set ref="#Camera_u41005" endtime="2016" />
+					<Set ref="#Text_u960" endtime="2016" />
+					<Set ref="#spedoometer_arrow_u33974" endtime="2016" />
+					<Set ref="#units_u39096" endtime="2016" />
+					<Set ref="#spedoometer_bg_u23772" endtime="2016" />
+					<Set ref="#spedoometer_bg_mat_u29804" endtime="2016" />
+					<Set ref="#Camera_u38023" endtime="2016" />
 				</State>
-				<State id="Scene-Mid_u41385" name="Mid" controlledproperty="" initialplaystate="Play" playmode="Stop at end" playthroughto="Previous" >
-					<Set ref="#Layer_u18603" endtime="2000" />
-					<Set ref="#Speedometer_u59660" endtime="2000" position="-20 0 0" >
+				<State id="Scene-Mid_u7299" name="Mid" controlledproperty="" initialplaystate="Play" playmode="Stop at end" playthroughto="Previous" >
+					<Set ref="#Layer_u38394" endtime="2000" />
+					<Set ref="#Speedometer_u26325" endtime="2000" position="-20 0 0" >
 						<AnimationTrack property="position.x" type="EaseInOut" dynamic="True" >0 -20 100 100 2 -20 100 100</AnimationTrack>
 						<AnimationTrack property="position.y" type="EaseInOut" dynamic="True" >0 0 100 100 2 0 100 100</AnimationTrack>
 						<AnimationTrack property="position.z" type="EaseInOut" dynamic="True" >0 0 100 100 2 0 100 100</AnimationTrack>
 					</Set>
-					<Set ref="#units_u46759" endtime="2000" />
-					<Set ref="#units_u33437" endtime="2000" />
-					<Set ref="#spedoometer_arrow_u32215" endtime="2000" />
-					<Set ref="#spedoometer_arrow_u56291" endtime="2000" />
-					<Set ref="#spedoometer_bg_u8397" endtime="2000" />
-					<Set ref="#spedoometer_bg_u4343" endtime="2000" />
-					<Set ref="#Camera_u41005" endtime="2000" />
+					<Set ref="#Text_u960" endtime="2000" />
+					<Set ref="#spedoometer_arrow_u33974" endtime="2000" />
+					<Set ref="#units_u39096" endtime="2000" />
+					<Set ref="#spedoometer_bg_u23772" endtime="2000" />
+					<Set ref="#spedoometer_bg_mat_u29804" endtime="2000" />
+					<Set ref="#Camera_u38023" endtime="2000" />
 				</State>
-				<State id="Scene-Right_u22227" name="Right" controlledproperty="" initialplaystate="Play" playmode="Stop at end" playthroughto="Previous" >
-					<Set ref="#Layer_u18603" endtime="2000" />
-					<Set ref="#Speedometer_u59660" endtime="2000" position="-20 0 0" >
+				<State id="Scene-Right_u33365" name="Right" controlledproperty="" initialplaystate="Play" playmode="Stop at end" playthroughto="Previous" >
+					<Set ref="#Layer_u38394" endtime="2000" />
+					<Set ref="#Speedometer_u26325" endtime="2000" position="-20 0 0" >
 						<AnimationTrack property="position.x" type="EaseInOut" dynamic="True" >0 -20 100 100 2 250 100 100</AnimationTrack>
 						<AnimationTrack property="position.y" type="EaseInOut" dynamic="True" >0 0 100 100 2 0 100 100</AnimationTrack>
 						<AnimationTrack property="position.z" type="EaseInOut" dynamic="True" >0 0 100 100 2 0 100 100</AnimationTrack>
 					</Set>
-					<Set ref="#units_u46759" endtime="2000" />
-					<Set ref="#units_u33437" endtime="2000" />
-					<Set ref="#spedoometer_arrow_u32215" endtime="2000" />
-					<Set ref="#spedoometer_arrow_u56291" endtime="2000" />
-					<Set ref="#spedoometer_bg_u8397" endtime="2000" />
-					<Set ref="#spedoometer_bg_u4343" endtime="2000" />
-					<Set ref="#Camera_u41005" endtime="2000" />
+					<Set ref="#Text_u960" endtime="2000" />
+					<Set ref="#spedoometer_arrow_u33974" endtime="2000" />
+					<Set ref="#units_u39096" endtime="2000" />
+					<Set ref="#spedoometer_bg_u23772" endtime="2000" />
+					<Set ref="#spedoometer_bg_mat_u29804" endtime="2000" />
+					<Set ref="#Camera_u38023" endtime="2000" />
+				</State>
+			</State>
+			<State name="Master Slide" component="#spedoometer_arrow_u33974" >
+				<Add ref="#Group_u12002" name="Group" controlledproperty="" endtime="2016" position="0 0 0" rotation="0 0 0" >
+					<AnimationTrack property="rotation.x" type="EaseInOut" >0 0 100 100 1.016 0 100 100 2 0 100 100</AnimationTrack>
+					<AnimationTrack property="rotation.y" type="EaseInOut" >0 0 100 100 1.016 0 100 100 2 0 100 100</AnimationTrack>
+					<AnimationTrack property="rotation.z" type="EaseInOut" >0 190 100 100 1.016 -60 100 100 2 190 100 100</AnimationTrack>
+				</Add>
+				<Add ref="#spedoometer_arrow_u22600" name="spedoometer_arrow_obj" controlledproperty="$ArrowRotation rotation" endtime="2016" position="0 0 0" rotation="0 0 -60" scale="5 4.63 1" sourcepath="#Rectangle" >
+					<AnimationTrack property="rotation.x" type="EaseInOut" />
+					<AnimationTrack property="rotation.y" type="EaseInOut" />
+					<AnimationTrack property="rotation.z" type="EaseInOut" />
+				</Add>
+				<Add ref="#spedoometer_arrow_001_u22647" name="spedoometer_arrow_mat" endtime="2016" referencedmaterial="#materials/spedoometer_arrow_u48545" sourcepath="../materials/spedoometer_arrow_mat.materialdef" />
+				<State id="spedoometer_arrow-Idle_u44353" name="Idle" initialplaystate="Play" playmode="Looping" >
+					<Set ref="#spedoometer_arrow_u33974" >
+						<Action id="spedoometer_arrow-Action_u9492" eyeball="True" triggerObject="#spedoometer_arrow_u33974" event="onSlideEnter" targetObject="#spedoometer_arrow_u33974" handler="Emit Signal" >
+							<HandlerArgument name="Signal Name" type="String" argtype="Signal" value="idleStart" />
+						</Action>
+					</Set>
+					<Set ref="#Group_u12002" endtime="2016" rotation="0 0 190" >
+						<AnimationTrack property="rotation.x" type="EaseInOut" dynamic="True" />
+						<AnimationTrack property="rotation.y" type="EaseInOut" dynamic="True" />
+						<AnimationTrack property="rotation.z" type="EaseInOut" dynamic="True" />
+					</Set>
+					<Set ref="#spedoometer_arrow_u22600" endtime="2016" rotation="0 0 0" />
+				</State>
+				<State id="spedoometer_arrow-Anim_u63825" name="Anim" controlledproperty="" initialplaystate="Play" playmode="Play Through To..." playthroughto="Previous" >
+					<Set ref="#Group_u12002" endtime="2000" rotation="0 0 0" >
+						<AnimationTrack property="rotation.x" type="EaseInOut" >0 0 0 0 1 0 0 0 2 0 0 0</AnimationTrack>
+						<AnimationTrack property="rotation.y" type="EaseInOut" >0 0 0 0 1 0 0 0 2 0 0 0</AnimationTrack>
+						<AnimationTrack property="rotation.z" type="EaseInOut" >0 190 0 0 1 -60 0 0 2 190 0 0</AnimationTrack>
+					</Set>
+					<Set ref="#spedoometer_arrow_u22600" endtime="2000" rotation="0 0 0" />
+					<Set ref="#spedoometer_arrow_001_u22647" endtime="2000" />
 				</State>
 			</State>
 		</Logic>
