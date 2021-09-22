@@ -34,11 +34,20 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     switch (event->key())
     {
         case Qt::Key_1:
-        presentation->setDataInputValue("CurrentSlide", "Slide1");
+        presentation->setAttribute("Slide","playmode",QVariant("Looping"));
+        presentation->setDataInputValue("CurrentSlide", "Left");
             break;
 
         case Qt::Key_2:
-        presentation->setDataInputValue("CurrentSlide", "Slide2");
+        presentation->setDataInputValue("CurrentSlide", "Mid");
+            break;
+
+        case Qt::Key_3:
+        presentation->setDataInputValue("CurrentSlide", "Right");
+            break;
+
+        case Qt::Key_4:
+                presentation->setDataInputValue("arrowAnim", 1.0, true);
             break;
 
         default:

@@ -2,6 +2,10 @@
 <application xmlns="http://qt.io/qt3dstudio/uia">
     <assets initial="speedometer">
         <presentation id="speedometer" src="presentations/speedometer.uip"/>
+        <dataInput metadata="" name="ArrowRotation" type="Vector3"/>
         <dataInput metadata="" name="CurrentSlide" type="String"/>
+        <dataInput metadata="" name="SpeedometerColor" type="Vector4"/>
+        <dataInput metadata="" name="SpeedometerVisible" type="Boolean"/>
+        <dataInput metadata="" name="arrowAnim" type="Ranged Number" min="0" max="10"/>
     </assets>
 </application>
