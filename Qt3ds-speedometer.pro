@@ -9,10 +9,12 @@ QT += studio3d
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    speedometercontroller.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    speedometercontroller.h
 
 FORMS +=
 

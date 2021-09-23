@@ -6,6 +6,8 @@
 #include <QKeyEvent>
 #include <QVector3D>
 
+#include "speedometercontroller.h"
+
 class MainWindow : public QWindow
 {
 public:
@@ -19,11 +21,7 @@ public slots:
 private:
     void keyPressEvent(QKeyEvent *event);
 
-    void onCustomSignal(const QString& path, const QString& name);
-
-    Q3DSPresentation* presentation;
-    QVector3D currentRotation;
-    bool speedometerVisible;
+    SpeedometerController controller;
 };
 
 #endif // MAINWINDOW_H
